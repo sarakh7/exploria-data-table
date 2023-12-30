@@ -4,7 +4,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 
 const Table = () => {
   const [currentName, setCurrentName] = useState("");
-  const [currentPhone, setCurrentPhone] = useState("");
+  const [currentPhone] = useState("");
 
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();

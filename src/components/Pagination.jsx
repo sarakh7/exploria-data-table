@@ -11,13 +11,13 @@ const Pagination = () => {
   } = useContext(AppContext);
 
   const pageList = [];
-  let totalPage = sortedRecords.length;
-  let total =
+  let totalDataNumber = sortedRecords.length;
+  let totalPage =
     sortedRecords.length % pageRecoredNum !== 0
-      ? totalPage / pageRecoredNum + 1
-      : totalPage / pageRecoredNum;
+      ? totalDataNumber / pageRecoredNum + 1
+      : totalDataNumber / pageRecoredNum;
 
-  for (let i = 1; i <= total; i++) {
+  for (let i = 1; i <= totalPage; i++) {
     pageList.push(i);
   }
 

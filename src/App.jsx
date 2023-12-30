@@ -23,12 +23,14 @@ function App() {
   const filterTable = () => {
     let newRecords = [...records];
 
+    //Filter by name
     if (name !== "") {
       newRecords = newRecords.filter((record) =>
         record.name.toLowerCase().includes(name.toLowerCase())
       );
     }
 
+    //Sort data
     if (sortMethod === "desc") {
       newRecords.sort((a, b) => new Date(b.date) - new Date(a.date));
     } else if (sortMethod === "asc") {
@@ -38,6 +40,7 @@ function App() {
     setSortedRecords(newRecords);
   };
 
+  //Fetch data from records.json
   const fetchData = async () => {
     try {
       const { data, status } = await axios.get("records.json");
